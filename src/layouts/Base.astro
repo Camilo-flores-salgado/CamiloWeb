@@ -5,9 +5,12 @@ import Nav from '../components/Nav.astro';
 interface Props {
 	title: string;
 	description: string;
+	path: string;
+	noindex?: boolean;
 }
 
-const { title, description } = Astro.props;
+const { title, description, path, noindex = false } = Astro.props;
+const canonicalUrl = new URL(path, Astro.site!).toString();
 
 const archivoExpanded = (await import('../assets/fonts/archivo-expanded-700.woff2?url')).default;
 const sourceSerif400 = (await import('@fontsource/source-serif-4/files/source-serif-4-latin-400-normal.woff2?url')).default;
@@ -23,11 +26,15 @@ const sourceSerif600 = (await import('@fontsource/source-serif-4/files/source-se
 
 		<title>{title}</title>
 		<meta name="description" content={description} />
+		{noindex && <meta name="robots" content="noindex" />}
 
-		<!-- TODO: og:image y og:url quedan pendientes hasta tener el dominio final y una imagen OG -->
+		<link rel="canonical" href={canonicalUrl} />
+
+		<!-- TODO: og:image queda pendiente hasta tener una imagen OG -->
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonicalUrl} />
 		<meta name="twitter:card" content="summary" />
 
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />

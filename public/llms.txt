@@ -4,5 +4,5 @@
 
 ## Páginas
 
-- [Inicio](/): promesa, precios en UF, plan de mantención mensual, dudas frecuentes y contacto por WhatsApp.
-- [Sobre mí](/sobre-mi): quién hace estos sitios, respaldo profesional y por qué los primeros proyectos van a precio de lanzamiento.
+- [Inicio](https://camiloflores.cl/): promesa, precios en UF, plan de mantención mensual, dudas frecuentes y contacto por WhatsApp.
+- [Sobre mí](https://camiloflores.cl/sobre-mi): quién hace estos sitios, respaldo profesional y por qué los primeros proyectos van a precio de lanzamiento.

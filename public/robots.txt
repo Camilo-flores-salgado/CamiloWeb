@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-# TODO: agregar "Sitemap: https://<dominio>/sitemap.xml" cuando el dominio esté registrado
+Sitemap: https://camiloflores.cl/sitemap.xml

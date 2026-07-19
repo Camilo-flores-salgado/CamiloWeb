@@ -46,12 +46,14 @@ const faqJsonLd = {
 	})),
 };
 
-// TODO: agregar "url" una vez que exista el dominio final.
+const siteUrl = Astro.site!.toString();
+
 const personJsonLd = {
 	'@context': 'https://schema.org',
 	'@type': 'Person',
 	name: 'Camilo Flores',
 	jobTitle: 'Desarrollador web',
+	url: siteUrl,
 	address: {
 		'@type': 'PostalAddress',
 		addressLocality: 'San Felipe',
@@ -64,6 +66,7 @@ const professionalServiceJsonLd = {
 	'@context': 'https://schema.org',
 	'@type': 'ProfessionalService',
 	name: 'Camilo Flores',
+	url: siteUrl,
 	description:
 		'Sitios web para negocios del Valle de Aconcagua. Carga en menos de un segundo y contacto directo por WhatsApp.',
 	areaServed: {
@@ -82,6 +85,7 @@ const professionalServiceJsonLd = {
 <Base
 	title="Camilo Flores — sitios web para negocios del Valle de Aconcagua"
 	description="Sitios que cargan en menos de un segundo y traen clientes por WhatsApp. Precio de lanzamiento para mis primeros 3 proyectos."
+	path="/"
 >
 	<script type="application/ld+json" set:html={JSON.stringify(personJsonLd)} is:inline />
 	<script type="application/ld+json" set:html={JSON.stringify(professionalServiceJsonLd)} is:inline />
