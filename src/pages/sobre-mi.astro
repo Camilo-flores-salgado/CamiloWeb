@@ -1,0 +1,67 @@
+---
+import Base from '../layouts/Base.astro';
+
+const whatsappNumber = '56958828777';
+const whatsappMessage = 'Hola Camilo, vi tu sitio y quiero partir con el mío.';
+const whatsappHref = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+---
+
+<Base
+	title="Sobre mí — Camilo Flores"
+	description="Camilo Flores, desarrollador web en San Felipe, Valle de Aconcagua. Trabajo también en una empresa de tecnología chilena con presencia internacional. Mis primeros 3 proyectos van a precio de lanzamiento."
+>
+	<main class="mx-auto max-w-2xl px-6 py-16">
+		<h1 class="font-display text-4xl font-bold leading-tight sm:text-5xl">Sobre mí</h1>
+
+		<p class="mt-6 font-body text-lg">
+			Me llamo Camilo Flores. Hago sitios web para negocios del Valle de Aconcagua, desde San
+			Felipe, Región de Valparaíso.
+		</p>
+	</main>
+
+	<section class="mx-auto max-w-2xl border-t border-borde px-6 py-16">
+		<h2 class="font-display text-3xl font-bold leading-tight sm:text-4xl">Mi respaldo</h2>
+
+		<p class="mt-6 font-body text-lg">
+			Trabajo como desarrollador en una empresa de tecnología chilena con presencia internacional.
+			Ese trabajo es mi respaldo técnico, no un catálogo de clientes: los proyectos de esa empresa
+			no son míos y no los muestro acá.
+		</p>
+	</section>
+
+	<section class="mx-auto max-w-2xl border-t border-borde px-6 py-16">
+		<h2 class="font-display text-3xl font-bold leading-tight sm:text-4xl">
+			Por ahora, mis primeros proyectos
+		</h2>
+
+		<p class="mt-6 font-body text-lg">
+			No tengo casos de clientes propios todavía. Estoy recién empezando este trabajo por mi
+			cuenta, y por eso mis primeros 3 proyectos van a precio de lanzamiento: menos de lo que voy a
+			cobrar después, a cambio de ser parte de los primeros sitios que hago de principio a fin.
+		</p>
+	</section>
+
+	<section class="mx-auto max-w-2xl border-t border-borde px-6 py-16">
+		<h2 class="font-display text-3xl font-bold leading-tight sm:text-4xl">Cómo trabajo</h2>
+
+		<p class="mt-6 font-body text-lg">
+			Cada sitio lo construyo a mano, pensado primero para el teléfono y para que cargue rápido
+			incluso con mala señal. Nada de plantillas genéricas ni constructores visuales pesados.
+		</p>
+	</section>
+
+	<section class="mx-auto max-w-2xl border-t border-borde px-6 py-16">
+		<h2 class="font-display text-3xl font-bold leading-tight sm:text-4xl">
+			¿Conversamos sobre tu sitio?
+		</h2>
+
+		<p class="mt-4 font-body text-lg">Cuéntame de tu negocio y partimos por ahí.</p>
+
+		<a
+			href={whatsappHref}
+			class="mt-8 inline-flex w-fit items-center justify-center rounded border border-azul bg-azul px-6 py-3 font-body font-semibold text-cal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tinta"
+		>
+			Escríbeme por WhatsApp
+		</a>
+	</section>
+</Base>

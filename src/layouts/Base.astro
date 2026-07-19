@@ -1,0 +1,44 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+
+const archivoExpanded = (await import('../assets/fonts/archivo-expanded-700.woff2?url')).default;
+const sourceSerif400 = (await import('@fontsource/source-serif-4/files/source-serif-4-latin-400-normal.woff2?url')).default;
+const sourceSerif600 = (await import('@fontsource/source-serif-4/files/source-serif-4-latin-600-normal.woff2?url')).default;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="generator" content={Astro.generator} />
+
+		<title>{title}</title>
+		<meta name="description" content={description} />
+
+		<!-- TODO: og:image y og:url quedan pendientes hasta tener el dominio final y una imagen OG -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta name="twitter:card" content="summary" />
+
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+
+		<link rel="preload" as="font" type="font/woff2" href={archivoExpanded} crossorigin />
+		<link rel="preload" as="font" type="font/woff2" href={sourceSerif400} crossorigin />
+		<link rel="preload" as="font" type="font/woff2" href={sourceSerif600} crossorigin />
+	</head>
+	<body>
+		<Nav />
+		<slot />
+	</body>
+</html>
