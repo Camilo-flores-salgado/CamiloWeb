@@ -1,12 +1,15 @@
 @import 'tailwindcss';
 
-/* Archivo Expanded 700 — instancia estática (wght 700, wdth 125%) generada a partir
-   del variable font, subseteada solo a los caracteres que usa el sitio. Titulares y cifras. */
+/* Archivo Expanded 700 — instancia estática (wght 700, wdth 125% / usWidthClass 7)
+   generada a partir del variable font, subseteada solo a los caracteres que usa el
+   sitio. No es variable: el ancho ya está grabado en los contornos, no hay eje wdth
+   que mover. font-stretch acá solo declara lo que el archivo ya es, no lo cambia. */
 @font-face {
 	font-family: 'Archivo Expanded';
 	font-style: normal;
 	font-display: swap;
 	font-weight: 700;
+	font-stretch: expanded;
 	src: url('../assets/fonts/archivo-expanded-700.woff2') format('woff2');
 }
 
@@ -67,6 +70,13 @@
 	--text-6xl: 4.5rem;
 	--text-6xl--line-height: 1;
 
+	/* Escala de letrero — titular del héroe y medidor en vivo. Fluida vía clamp(),
+	   pero como paso nombrado de la escala, no como valor arbitrario suelto. */
+	--text-display-xl: clamp(2.75rem, 2rem + 3.2vw, 4.5rem);
+	--text-display-xl--line-height: 0.98;
+	--text-display-2xl: clamp(3.4rem, 2.6rem + 4vw, 5rem);
+	--text-display-2xl--line-height: 1;
+
 	/* Radio de borde — letrero pintado, no app */
 	--radius: 2px;
 }
@@ -75,4 +85,11 @@ body {
 	background-color: var(--color-cal);
 	color: var(--color-tinta);
 	font-family: var(--font-body);
+}
+
+/* Textura de cal — ruido tonal muy sutil, solo para la banda del héroe.
+   Data URI (sin request aparte), <1KB, desaturado vía feColorMatrix. */
+.bg-textura-cal {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
+	background-repeat: repeat;
 }
