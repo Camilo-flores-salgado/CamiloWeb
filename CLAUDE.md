@@ -65,7 +65,7 @@ Prohibido explícitamente: librerías de animación (GSAP, Framer Motion, AOS), 
 
 Estos números son requisitos, no aspiraciones. Un PR que los rompe no se mergea.
 
-- **JS enviado al cliente: < 2 KB** (comprimido). El objetivo es 0. El único JS permitido en v1 es el medidor del hero.
+- **JS enviado al cliente: < 2 KB** (comprimido), sin contar el beacon de Cloudflare Web Analytics. El objetivo es 0. El único JS del sitio, además del beacon de analítica sin cookies, es el medidor del hero.
 - **Peso total de la home: < 120 KB** comprimido, incluyendo tipografías e imágenes.
 - **LCP: < 1,0 s** en 4G simulado / móvil.
 - **CLS: < 0,01.** Toda imagen lleva `width` y `height`. Toda tipografía se precarga.
