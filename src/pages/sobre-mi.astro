@@ -4,6 +4,12 @@ import Base from '../layouts/Base.astro';
 const whatsappNumber = '56958828777';
 const whatsappMessage = 'Hola Camilo, vi tu sitio y quiero partir con el mío.';
 const whatsappHref = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+const ficha = [
+	{ label: 'dónde', value: 'San Felipe, Valle de Aconcagua' },
+	{ label: 'oficio', value: 'Sitios web rápidos, hechos a mano' },
+	{ label: 'respondo', value: 'El mismo día hábil' },
+];
 ---
 
 <Base
@@ -11,58 +17,82 @@ const whatsappHref = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 	description="Camilo Flores, desarrollador web en San Felipe, Valle de Aconcagua. Trabajo también en una empresa de tecnología chilena con presencia internacional. Mis primeros 3 proyectos van a precio de lanzamiento."
 	path="/sobre-mi"
 >
-	<main class="mx-auto max-w-2xl px-6 py-16">
-		<h1 class="font-display text-4xl font-bold leading-tight sm:text-5xl">Sobre mí</h1>
+	<main>
+		<section class="w-full bg-cal bg-textura-cal">
+			<div class="mx-auto max-w-2xl px-6 py-16">
+				<h1 class="font-display text-display-xl font-bold">Sobre mí</h1>
 
-		<p class="mt-6 font-body text-lg">
-			Me llamo Camilo Flores. Hago sitios web para negocios del Valle de Aconcagua, desde San
-			Felipe, Región de Valparaíso.
-		</p>
+				<p class="mt-6 max-w-prose font-body text-lg">
+					Me llamo Camilo Flores. Hago sitios web para negocios del Valle de Aconcagua, desde San
+					Felipe, Región de Valparaíso.
+				</p>
+
+				<dl class="mt-10 max-w-md border-b border-borde">
+					{
+						ficha.map((item) => (
+							<div class="flex items-baseline justify-between gap-4 border-t border-borde py-3.5">
+								<dt class="font-display text-xs font-bold tracking-wide text-parra">{item.label}</dt>
+								<dd class="m-0 text-right font-body text-base">{item.value}</dd>
+							</div>
+						))
+					}
+				</dl>
+			</div>
+		</section>
+
+		<section class="w-full border-t border-borde bg-cal bg-textura-cal">
+			<div class="mx-auto max-w-2xl px-6 py-16">
+				<h2 class="font-display text-3xl font-bold leading-tight sm:text-4xl">Mi respaldo</h2>
+
+				<p class="mt-6 max-w-prose font-body text-lg">
+					Trabajo como desarrollador en una empresa de tecnología chilena con presencia
+					internacional. Ese trabajo es mi respaldo técnico, no un catálogo de clientes: los
+					proyectos de esa empresa no son míos y no los muestro acá.
+				</p>
+			</div>
+		</section>
+
+		<section class="w-full bg-azul text-cal">
+			<div class="mx-auto max-w-2xl px-6 py-16">
+				<h2 class="font-display text-3xl font-bold leading-tight sm:text-4xl">Cómo trabajo</h2>
+
+				<p class="mt-6 max-w-prose font-body text-lg">
+					Cada sitio lo construyo a mano, pensado primero para el teléfono y para que cargue rápido
+					incluso con mala señal. Nada de plantillas genéricas ni constructores visuales pesados.
+				</p>
+			</div>
+		</section>
+
+		<section class="w-full bg-cal bg-textura-cal">
+			<div class="mx-auto max-w-2xl px-6 py-16">
+				<h2 class="font-display text-3xl font-bold leading-tight sm:text-4xl">
+					Recién empiezo por mi cuenta. Te lo digo de frente.
+				</h2>
+
+				<p class="mt-6 max-w-prose font-body text-lg">
+					Ya hice el sitio de un cliente real: Gonzalo Toro, CEO de ITQ Internacional, dejó su
+					testimonio en la portada. Por eso mis primeros 3 proyectos van a precio de lanzamiento:
+					menos de lo que voy a cobrar después, a cambio de ser parte de los primeros sitios que
+					hago de principio a fin.
+				</p>
+			</div>
+		</section>
+
+		<section class="w-full bg-azul text-cal">
+			<div class="mx-auto max-w-2xl px-6 py-16">
+				<h2 class="font-display text-3xl font-bold leading-tight sm:text-4xl">
+					¿Conversamos sobre tu sitio?
+				</h2>
+
+				<p class="mt-4 max-w-prose font-body text-lg">Cuéntame de tu negocio y partimos por ahí.</p>
+
+				<a
+					href={whatsappHref}
+					class="mt-8 inline-flex w-fit items-center justify-center rounded border border-cal bg-cal px-6 py-3 font-body font-semibold text-azul focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cal"
+				>
+					Escríbeme por WhatsApp
+				</a>
+			</div>
+		</section>
 	</main>
-
-	<section class="mx-auto max-w-2xl border-t border-borde px-6 py-16">
-		<h2 class="font-display text-3xl font-bold leading-tight sm:text-4xl">Mi respaldo</h2>
-
-		<p class="mt-6 font-body text-lg">
-			Trabajo como desarrollador en una empresa de tecnología chilena con presencia internacional.
-			Ese trabajo es mi respaldo técnico, no un catálogo de clientes: los proyectos de esa empresa
-			no son míos y no los muestro acá.
-		</p>
-	</section>
-
-	<section class="mx-auto max-w-2xl border-t border-borde px-6 py-16">
-		<h2 class="font-display text-3xl font-bold leading-tight sm:text-4xl">
-			Por ahora, mis primeros proyectos
-		</h2>
-
-		<p class="mt-6 font-body text-lg">
-			No tengo casos de clientes propios todavía. Estoy recién empezando este trabajo por mi
-			cuenta, y por eso mis primeros 3 proyectos van a precio de lanzamiento: menos de lo que voy a
-			cobrar después, a cambio de ser parte de los primeros sitios que hago de principio a fin.
-		</p>
-	</section>
-
-	<section class="mx-auto max-w-2xl border-t border-borde px-6 py-16">
-		<h2 class="font-display text-3xl font-bold leading-tight sm:text-4xl">Cómo trabajo</h2>
-
-		<p class="mt-6 font-body text-lg">
-			Cada sitio lo construyo a mano, pensado primero para el teléfono y para que cargue rápido
-			incluso con mala señal. Nada de plantillas genéricas ni constructores visuales pesados.
-		</p>
-	</section>
-
-	<section class="mx-auto max-w-2xl border-t border-borde px-6 py-16">
-		<h2 class="font-display text-3xl font-bold leading-tight sm:text-4xl">
-			¿Conversamos sobre tu sitio?
-		</h2>
-
-		<p class="mt-4 font-body text-lg">Cuéntame de tu negocio y partimos por ahí.</p>
-
-		<a
-			href={whatsappHref}
-			class="mt-8 inline-flex w-fit items-center justify-center rounded border border-azul bg-azul px-6 py-3 font-body font-semibold text-cal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tinta"
-		>
-			Escríbeme por WhatsApp
-		</a>
-	</section>
 </Base>
