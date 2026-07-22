@@ -1,6 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
 
+import Ejemplo from '../components/Ejemplo.astro';
+
 const whatsappNumber = '56958828777';
 const whatsappMessage = 'Hola Camilo, vi tu sitio y quiero partir con el mío.';
 const whatsappHref = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
@@ -230,6 +232,8 @@ const professionalServiceJsonLd = {
 			</p>
 		</div>
 	</section>
+
+	<Ejemplo />
 
 	<section class="w-full bg-cal bg-textura-cal">
 		<div class="mx-auto max-w-2xl px-6 py-16">

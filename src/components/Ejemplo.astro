@@ -1,0 +1,73 @@
+---
+import { Image } from 'astro:assets';
+
+// TODO: reemplazar por la captura real del demo.
+// Recomendado: AVIF < 50 KB, tomada en móvil (~390px de ancho) o del hero en escritorio.
+// Astro deduce width/height del archivo importado, así que el CLS queda en 0 solo.
+import capturaDemo from '../assets/img/demo-encuentro-pyme.webp';
+
+// TODO: confirmar la URL final (hoy workers.dev; más adelante un subdominio propio).
+const demoUrl = 'https://landingdemo1.houdini-dev.workers.dev/';
+
+// TODO: reemplazar por los números REALES medidos con PageSpeed contra el demo desplegado.
+// No publicar cifras sin medir.
+const metricas = [
+	{ label: 'PageSpeed móvil', valor: '100/100' },
+	{ label: 'JavaScript', valor: '2 KB' },
+];
+---
+
+<section class="w-full border-t border-borde bg-cal bg-textura-cal">
+	<div class="mx-auto max-w-2xl px-6 py-16">
+		<p class="font-display text-xs font-bold tracking-wide text-parra">Ejemplo</p>
+
+		<h2 class="mt-4 font-display text-3xl font-bold leading-tight sm:text-4xl">
+			Así se ve un sitio de una página.
+		</h2>
+
+		<p class="mt-6 max-w-prose font-body text-lg">
+			Hice el sitio completo de un seminario para dueños de negocios del valle: programa,
+			expositores e inscripción que llega por correo. El evento es inventado; el trabajo, no.
+		</p>
+
+		<div class="mt-10 w-full overflow-hidden rounded border border-tinta">
+			<Image
+				src={capturaDemo}
+				alt="Portada del sitio del Encuentro PyME Aconcagua: titular grande, botón de inscripción y cuenta regresiva."
+				widths={[400, 800]}
+				sizes="(min-width: 640px) 448px, 100vw"
+				format="avif"
+				quality={70}
+				loading="lazy"
+				decoding="async"
+				class="block h-auto w-full"
+			/>
+		</div>
+
+		<dl class="mt-10 flex flex-wrap gap-8">
+			{
+				metricas.map((m) => (
+					<div class="flex items-stretch gap-3">
+						<div class="w-0.5 bg-tinta" aria-hidden="true" />
+						<div>
+							<dt class="font-display text-xs font-bold tracking-wide text-parra">{m.label}</dt>
+							<dd class="m-0 font-display text-3xl font-bold leading-none tabular-nums text-azul">
+								{m.valor}
+							</dd>
+						</div>
+					</div>
+				))
+			}
+		</dl>
+
+		<a
+			href={demoUrl}
+			target="_blank"
+			rel="noopener"
+			class="mt-10 inline-flex w-fit items-center justify-center rounded bg-azul px-6 py-3 font-body font-semibold text-cal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tinta"
+		>
+			Ver el ejemplo completo
+			<span class="sr-only"> (se abre en una pestaña nueva)</span>
+		</a>
+	</div>
+</section>
