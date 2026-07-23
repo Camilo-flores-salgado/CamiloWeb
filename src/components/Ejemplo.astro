@@ -31,17 +31,15 @@ const metricas = [
 		</p>
 
 		<div class="mt-10 w-full overflow-hidden rounded border border-tinta">
-			<Image
-				src={capturaDemo}
-				alt="Portada del sitio del Encuentro PyME Aconcagua: titular grande, botón de inscripción y cuenta regresiva."
-				widths={[400, 800]}
-				sizes="(min-width: 640px) 448px, 100vw"
-				format="avif"
-				quality={70}
-				loading="lazy"
-				decoding="async"
-				class="block h-auto w-full"
-			/>
+			<img
+	src={capturaDemo.src}
+	width={capturaDemo.width}
+	height={capturaDemo.height}
+	alt="Portada del sitio del Encuentro PyME Aconcagua: titular grande, botón de inscripción y cuenta regresiva."
+	loading="lazy"
+	decoding="async"
+	class="block h-auto w-full"
+/>
 		</div>
 
 		<dl class="mt-10 flex flex-wrap gap-8">
